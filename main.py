@@ -149,13 +149,13 @@ class Gun(Sprite):
         else:
             self.color = GREY
     def moving_up(self):
-        if up == True:
+        if up == True and self.rect.top > 0:
             self.movey -= 5
             self.rect.centery -= 5
             self.rect.x = 0
 
     def moving_down(self):
-        if down == True:
+        if down == True and self.rect.bottom < 600:
             self.movey += 5
             self.rect.centery += 5
             self.rect.x = 0
@@ -287,7 +287,6 @@ while not finished:
     gun.moving_down()
     target.move()
     target1.move()
-    gun.self.i += 1
     font = pygame.font.Font(None, 36)
     closing = "Ты проиграл, твой счет:" +  " " + str(target.points + target1.points)
     text = font.render( closing, True, (0, 0, 0))
