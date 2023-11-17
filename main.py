@@ -287,7 +287,7 @@ while not finished:
     gun.moving_down()
     target.move()
     target1.move()
-    gun.i += 1
+    gun.self.i += 1
     font = pygame.font.Font(None, 36)
     closing = "Ты проиграл, твой счет:" +  " " + str(target.points + target1.points)
     text = font.render( closing, True, (0, 0, 0))
